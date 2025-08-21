@@ -1,8 +1,7 @@
 const express = require('express')
 const app = express()
+const userRouter = require('./src/routes/user.routes')
 
-app.get('/', (req, res)=>{
-    const soma = 1+2
-    res.send({soma: soma})
-})
-app.listen(3000, '', console.log("Servidor inicializado"))  
+app.use('/soma', userRouter)
+
+app.listen(3000)
